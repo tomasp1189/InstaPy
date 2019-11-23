@@ -30,7 +30,7 @@ ignore_list = ['sex', 'nude', 'naked', 'gun', 'shoot', 'slaughter', 'pussy',
                '[nazi', 'jew', 'judaism', '[muslim', '[islam', 'bangladesh', '[hijab',
                '[niqab', '[farright', '[rightwing']
 
-accounts = ['accounts with similar content'
+accounts = ['accounts with similar content']
 # 'surf', 'surfing', 'surflive', 'sealife', 'skate', 'skateboarding', 'music', 'musica', 'carverskate'
 
 # get a session!
@@ -55,9 +55,8 @@ with smart_run(session):
     session.like_by_tags(random.sample(like_tag_list, 3),
                          amount=random.randint(50, 100), interact=True)
 
-    session.unfollow_users(amount=random.randint(75, 150),
-                           InstapyFollowed=(True, "all"), style="FIFO",
-                           unfollow_after=90 * 60 * 60, sleep_delay=501)
+    session.unfollow_users(amount=random.randint(75, 150), instapy_followed_enabled=True,
+                           instapy_followed_param="nonfollowers", style="FIFO", unfollow_after=90 * 60 * 60, sleep_delay=601)
 
     """ Joining Engagement Pods...
     """
